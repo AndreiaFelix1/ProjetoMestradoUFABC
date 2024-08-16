@@ -64,3 +64,17 @@ def saudacao(nome):
     return f"Olá, {nome}!"
 
 print(saudacao("Mundo"))
+
+
+### Notas:
+
+1. **Imagens**: Use links para imagens hospedadas em outros sites ou diretamente no seu repositório. A sintaxe para imagens é `![Texto Alternativo](URL)`.
+   
+2. **Links**: Você pode adicionar links para páginas externas ou outras partes do seu repositório com `[Texto](URL)`.
+
+3. **Código**: Para mostrar blocos de código, use três crases (```) antes e depois do código. Para destacar a linguagem, adicione o nome da linguagem logo após as crases de abertura.
+
+4. **Seções**: Use hashtags (`#`) para criar títulos e subtítulos. Quanto mais hashtags, menor o nível do título.
+
+Esse é um exemplo básico, e você pode personalizar o README conforme suas necessidades.
+
