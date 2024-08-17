@@ -1,4 +1,4 @@
-# Projeto de Exemplo
+# Projeto de mestrado UFABC
 
 Bem-vindo ao projeto de exemplo! Este repositório demonstra como criar um README.md com Markdown que inclui imagens e textos personalizados.
 
