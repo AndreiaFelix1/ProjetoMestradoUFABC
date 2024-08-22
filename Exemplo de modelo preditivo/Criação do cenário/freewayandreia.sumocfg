@@ -1,0 +1,6 @@
+<configuration>
+  <input>
+    <net-file value="freewayandreia.net.xml"/>
+    <route-files value="freewayandreia.rou.xml"/>
+  </input>
+</configuration>
