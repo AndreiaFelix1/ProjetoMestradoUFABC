@@ -42,7 +42,8 @@ Aqui está uma imagem de exemplo da rede gerada em real world:
     <net-file value="meu.net.xml"/>
     <route-files value="meu.rou.xml"/>
   </input>
-</configuration>```
+</configuration>
+
 
 4. Para visualizar a rede criada abre o arquivo sumo-gui com duplo clique, clique em file -> open simulation -> selecione o arquivo de simulação criado sumo.cfg.
 
