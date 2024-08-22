@@ -24,3 +24,4 @@ Aqui está uma imagem de exemplo da rede gerada em real world:
 ![Cenário Gerado no SUMO](Exemplo%20de%20modelo%20preditivo/Criação%20do%20cenário/Cenário%20gerado%20no%20SUMO.png)
 
 
+
