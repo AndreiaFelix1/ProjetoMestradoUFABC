@@ -1,4 +1,4 @@
-# Exemplo de modelo de predição
+# Exemplo de modelo de predição de posição
 
 Nesse repositória está exemplos de técnicas de predição para prever a posição futura de um veículo em um ambiente controlado. Todos os códigos usados para criar os cenários de simulação estão na pasta Criação do cenário.
 
