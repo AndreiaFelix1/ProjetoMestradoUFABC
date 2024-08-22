@@ -21,7 +21,7 @@ Para começar com este projeto, siga os passos abaixo:
 
 Aqui está uma imagem de exemplo da rede gerada em real world:
 
-![Cenário Gerado no SUMO](Exemplo%20de%20modelo%20preditivo/Criação%20do%20cenário/Cenário%20gerado%20no%20SUMO.png)
+![Cenário Gerado no SUMO](https://github.com/AndreiaFelix1/ProjetoMestradoUFABC/blob/main/Exemplo%20de%20modelo%20preditivo/Cria%C3%A7%C3%A3o%20do%20cen%C3%A1rio/Cen%C3%A1rio%20gerado%20no%20SUMO.png)
 
 
 
