@@ -21,6 +21,6 @@ Para começar com este projeto, siga os passos abaixo:
 
 Aqui está uma imagem de exemplo da rede gerada em real world:
 
-![Imagem de Exemplo](Exemplo de modelo preditivo/Criação do cenário/Cenário gerado no SUMO.png)
+![Imagem de Exemplo](Cenário gerado no SUMO.png)
 
 
