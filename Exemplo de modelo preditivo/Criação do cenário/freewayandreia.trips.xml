@@ -1,0 +1,22 @@
+<trips>
+    <trip id="0" depart="0" from="1to2" to="1to2"/>
+    <trip id="1" depart="10" from="1to2" to="1to2"/>
+    <trip id="2" depart="20" from="1to2" to="1to2"/>
+    <trip id="3" depart="30" from="1to2" to="1to2"/>
+    <trip id="4" depart="40" from="1to2" to="1to2"/>
+    <trip id="5" depart="50" from="1to2" to="1to2"/>
+    <trip id="6" depart="60" from="1to2" to="1to2"/>
+    <trip id="7" depart="70" from="1to2" to="1to2"/>
+    <trip id="8" depart="80" from="1to2" to="1to2"/>
+    <trip id="9" depart="90" from="1to2" to="1to2"/>
+    <trip id="10" depart="100" from="1to2" to="1to2"/>
+    <trip id="11" depart="110" from="1to2" to="1to2"/>
+    <trip id="12" depart="120" from="1to2" to="1to2"/>
+    <trip id="13" depart="130" from="1to2" to="1to2"/>
+    <trip id="14" depart="140" from="1to2" to="1to2"/>
+    <trip id="15" depart="150" from="1to2" to="1to2"/>
+    <trip id="16" depart="160" from="1to2" to="1to2"/>
+    <trip id="17" depart="170" from="1to2" to="1to2"/>
+    <trip id="18" depart="180" from="1to2" to="1to2"/>
+    <trip id="19" depart="190" from="1to2" to="1to2"/>
+</trips>

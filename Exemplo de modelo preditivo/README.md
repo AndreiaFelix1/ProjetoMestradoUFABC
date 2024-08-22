@@ -36,15 +36,13 @@ Aqui está uma imagem de exemplo da rede gerada em real world:
 
 3. Crie um arquivo de configuração:
 
-    ```bash
+```python
     <configuration>
   <input>
     <net-file value="meu.net.xml"/>
     <route-files value="meu.rou.xml"/>
   </input>
-</configuration>
-    ```
-
+</configuration>```
 
 4. Para visualizar a rede criada abre o arquivo sumo-gui com duplo clique, clique em file -> open simulation -> selecione o arquivo de simulação criado sumo.cfg.
 
@@ -52,7 +50,7 @@ Aqui está uma imagem de exemplo da rede gerada em real world:
 
 Aqui está uma imagem de exemplo da simulação gerada em real world:
 
-![Cenário Gerado no SUMO](https://github.com/AndreiaFelix1/ProjetoMestradoUFABC/blob/main/Exemplo%20de%20modelo%20preditivo/Cria%C3%A7%C3%A3o%20do%20cen%C3%A1rio/Cen%C3%A1rio%20gerado%20no%20SUMO.png)
+![Cenário Gerado no SUMO](https://github.com/AndreiaFelix1/ProjetoMestradoUFABC/blob/main/Exemplo%20de%20modelo%20preditivo/Cria%C3%A7%C3%A3o%20do%20cen%C3%A1rio/Cen%C3%A1rio%20com%20carrinhos.png)
 
 
 ## Referências
