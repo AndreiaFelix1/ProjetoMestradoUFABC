@@ -71,9 +71,11 @@ Para colocar a simulação no veins, printar na tela ID, posição e velocidade 
 
 4. Faça o treinamento nos modelos ARIMA, KNNregressor, regressão linear e SVR conforme a pasta Modelos de predição. A matriz de confusão dos nossos dados é:
 
-
+![Cenário Gerado no colab](https://github.com/AndreiaFelix1/ProjetoMestradoUFABC/blob/main/Exemplo%20de%20modelo%20preditivo%20de%20posi%C3%A7%C3%A3o%20de%201%20carro/Modelos%20de%20predi%C3%A7%C3%A3o/Captura%20de%20tela%202024-08-23%20161108.png)
 
 5. Os resultados da simulação obtidos são:
+
+![Cenário Gerado no colab](https://github.com/AndreiaFelix1/ProjetoMestradoUFABC/blob/main/Exemplo%20de%20modelo%20preditivo%20de%20posi%C3%A7%C3%A3o%20de%201%20carro/Modelos%20de%20predi%C3%A7%C3%A3o/ResultadosSimulacoes.png)
 
 
 
