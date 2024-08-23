@@ -55,6 +55,33 @@ Aqui está uma imagem de exemplo da simulação gerada em real world:
 
 ![Cenário Gerado no SUMO](https://github.com/AndreiaFelix1/ProjetoMestradoUFABC/blob/main/Exemplo%20de%20modelo%20preditivo%20de%20posi%C3%A7%C3%A3o%20de%201%20carro/Cria%C3%A7%C3%A3o%20do%20cen%C3%A1rio/Cen%C3%A1rio%20com%20carrinhos.png)
 
+## 🚀 Treinamento e teste do modelo de predição
+
+Para colocar a simulação no veins, printar na tela ID, posição e velocidade de um veículo, e treinar modelos de predição:
+
+1. O código do veins está na pasta Criação do cenário.
+
+2. Rode a simulação, a tela obtida será:
+
+![Cenário Gerado no VEINS](https://github.com/AndreiaFelix1/ProjetoMestradoUFABC/blob/main/Exemplo%20de%20modelo%20preditivo%20de%20posi%C3%A7%C3%A3o%20de%201%20carro/Cria%C3%A7%C3%A3o%20do%20cen%C3%A1rio/Screenshot%20from%202024-08-23%2018-20-38.png)
+
+2. Copie as informações obtidas no terminal e cole em um excel.
+
+3. Faça a limpeza dos dados, deixando apenas os primeiros números da posição e da velocidade.
+
+4. Faça o treinamento nos modelos ARIMA, KNNregressor, regressão linear e SVR conforme a pasta Modelos de predição. A matriz de confusão dos nossos dados é:
+
+
+
+5. Os resultados da simulação obtidos são:
+
+
+
+
+
+
+
+
 
 
 
