@@ -59,7 +59,7 @@ Aqui está uma imagem de exemplo da simulação gerada em real world:
 
 Para colocar a simulação no veins, printar na tela ID, posição e velocidade de um veículo, e treinar modelos de predição:
 
-1. O código do veins está na pasta Criação do cenário.
+1. Os códigos está na pasta Criação do cenário.
 
 2. Rode a simulação, a tela obtida será:
 
@@ -67,13 +67,17 @@ Para colocar a simulação no veins, printar na tela ID, posição e velocidade 
 
 2. Copie as informações obtidas no terminal e cole em um excel.
 
-3. Faça a limpeza dos dados, deixando apenas os primeiros números da posição e da velocidade.
+3. Foi feito uma plotagem de gráfico Velocidade x Tempo conforme abaixo:
 
-4. Faça o treinamento nos modelos ARIMA, KNNregressor, regressão linear e SVR conforme a pasta Modelos de predição. A matriz de confusão dos nossos dados é:
+
+
+4. Faça a limpeza dos dados, deixando apenas os primeiros números da posição e da velocidade.
+
+5. Faça o treinamento nos modelos ARIMA, KNNregressor, regressão linear e SVR conforme a pasta Modelos de predição. A matriz de confusão dos nossos dados é:
 
 ![Cenário Gerado no colab](https://github.com/AndreiaFelix1/ProjetoMestradoUFABC/blob/main/Exemplo%20de%20modelo%20preditivo%20de%20posi%C3%A7%C3%A3o%20de%201%20carro/Modelos%20de%20predi%C3%A7%C3%A3o/Captura%20de%20tela%202024-08-23%20161108.png)
 
-5. Os resultados da simulação obtidos são:
+6. Os resultados da simulação obtidos são:
 
 ![Cenário Gerado no colab](https://github.com/AndreiaFelix1/ProjetoMestradoUFABC/blob/main/Exemplo%20de%20modelo%20preditivo%20de%20posi%C3%A7%C3%A3o%20de%201%20carro/Modelos%20de%20predi%C3%A7%C3%A3o/ResultadosSimulacoes.png)
 
