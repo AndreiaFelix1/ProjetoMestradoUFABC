@@ -3,6 +3,7 @@
 	<name>biblioteca_veins</name>
 	<comment></comment>
 	<projects>
+		<project>veins</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
