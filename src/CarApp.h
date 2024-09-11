@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2016 David Eckhoff <david.eckhoff@fau.de>
+// Copyright (C) 2006-2011 Christoph Sommer <christoph.sommer@uibk.ac.at>
 //
 // Documentation for these modules is at http://veins.car2x.org/
 //
@@ -23,16 +23,42 @@
 #pragma once
 
 #include "veins/modules/application/ieee80211p/DemoBaseApplLayer.h"
+#include "DemoSafetyMessage_m"
 
 namespace veins {
 
 /**
- * Small RSU Demo using 11p
+ * @brief
+ * A tutorial demo for TraCI. When the car is stopped for longer than 10 seconds
+ * it will send a message out to other cars containing the blocked road id.
+ * Receiving cars will then trigger a reroute via TraCI.
+ * When channel switching between SCH and CCH is enabled on the MAC, the message is
+ * instead send out on a service channel following a Service Advertisement
+ * on the CCH.
+ *
+ * @author Christoph Sommer : initial DemoApp
+ * @author David Eckhoff : rewriting, moving functionality to DemoBaseApplLayer, adding WSA
+ *
  */
-class VEINS_API TraCIDemoRSU11p : public DemoBaseApplLayer {
+
+class VEINS_API CarApp : public DemoBaseApplLayer {
+public:
+    void initialize(int stage) override;
+
 protected:
+    int self;
+    simtime_t lastDroveAt;
+    bool sentMessage;
+    int currentSubscribedServiceId;
+
+protected:
+    void sendBeacon();
+    void onBSM(DemoSafetyMessage* bsm) override;
     void onWSM(BaseFrame1609_4* wsm) override;
     void onWSA(DemoServiceAdvertisment* wsa) override;
+
+    void handleSelfMsg(cMessage* msg) override;
+    void handlePositionUpdate(cObject* obj) override;
 };
 
 } // namespace veins

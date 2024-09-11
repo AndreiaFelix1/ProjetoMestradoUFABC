@@ -20,15 +20,16 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-#include "veins/modules/application/traci/TraCIDemo11p.h"
+#include "CarApp.h"
 
-#include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+#include "messages/TraCIDemo11pMessage_m.h"
+#include "DemoSafetyMessage_m"
 
 using namespace veins;
 
-Define_Module(veins::TraCIDemo11p);
+Define_Module(veins::CarApp);
 
-void TraCIDemo11p::initialize(int stage)
+void CarApp::initialize(int stage)
 {
     DemoBaseApplLayer::initialize(stage);
     if (stage == 0) {
@@ -36,11 +37,15 @@ void TraCIDemo11p::initialize(int stage)
         lastDroveAt = simTime();
         currentSubscribedServiceId = -1;
 
-        std::cout << myId << " entrou na simulação em " << simTime() << endl;
+            mobility = TraCIMobilityAccess().get(getParentModule());
+            traciVehicle = mobility->getVehicleCommandInterface();
+            self = getParentModule()->getIndex();
+
+      //  std::cout << myId << " entrou na simulação em " << simTime() << endl;
     }
 }
 
-void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
+void CarApp::onWSA(DemoServiceAdvertisment* wsa)
 {
     if (currentSubscribedServiceId == -1) {
         mac->changeServiceChannel(static_cast<Channel>(wsa->getTargetChannel()));
@@ -52,11 +57,33 @@ void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
     }
 }
 
-void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
+void CarApp::onBSM(DemoSafetyMessage* bsm)
+{
+    std::cout << self << " recebi mensagem de beacon " << simTime() << endl;
+    // Your application has received a beacon message from another car or RSU
+    // code for handling the message goes here
+}
+
+void CarApp::sendBeacon()
+{
+    DemoSafetyMessage* beacon = new DemoSafetyMessage();
+    populateWSM(beacon);
+    beacon->setSenderId(self);
+    sendDown(beacon);
+    std::cout << self << " enviei mensagem de beacon " << simTime() << endl;
+}
+
+void CarApp::onWSM(BaseFrame1609_4* frame)
 {
     TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
 
     findHost()->getDisplayString().setTagArg("i", 1, "green");
+
+    std::cout << self << " estou na localização " << endl;
+    std::cout << " * posição: " << curPosition << endl;
+    std::cout << " * aceleração: " << traciVehicle->getAcceleration() << endl;
+    std::cout << " * velocidade: " << traciVehicle->getSpeed() << endl;
+    std::cout << " * direção: " << traciVehicle->getAngle() << endl;
 
     if (mobility->getRoadId()[0] != ':') traciVehicle->changeRoute(wsm->getDemoData(), 9999);
     if (!sentMessage) {
@@ -68,7 +95,7 @@ void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
     }
 }
 
-void TraCIDemo11p::handleSelfMsg(cMessage* msg)
+void CarApp::handleSelfMsg(cMessage* msg)
 {
     if (TraCIDemo11pMessage* wsm = dynamic_cast<TraCIDemo11pMessage*>(msg)) {
         // send this message on the service channel until the counter is 3 or higher.
@@ -85,11 +112,24 @@ void TraCIDemo11p::handleSelfMsg(cMessage* msg)
         }
     }
     else {
-        DemoBaseApplLayer::handleSelfMsg(msg);
+        switch (msg->getKind()) {
+        case SEND_BEACON_EVT: {
+            std::cout << "[BEACON] " << self << " enviando beacon em " << simTime() << endl;
+            sendBeacon();
+            scheduleAt(simTime() + beaconInterval, sendBeaconEvt);
+            break;
+        }
+        default: {
+            if (msg) EV_WARM << " APP: Error: Got Self Message of unknown kind! Name: " << msg->get>
+            break;
+
+
+        }
+
     }
 }
 
-void TraCIDemo11p::handlePositionUpdate(cObject* obj)
+void CarApp::handlePositionUpdate(cObject* obj)
 {
     DemoBaseApplLayer::handlePositionUpdate(obj);
 

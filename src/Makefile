@@ -33,10 +33,12 @@ PROJECTRELATIVE_PATH = src
 O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc, .msg and .sm files
-OBJS = $O/TraCIDemo11p.o $O/TraCIDemoRSU11p.o
+OBJS = $O/CarApp.o $O/RSUApp.o $O/messages/DemoSafetyMessage_m.o $O/messages/TraCIDemo11pMessage_m.o
 
 # Message files
-MSGFILES =
+MSGFILES = \
+    messages/DemoSafetyMessage.msg \
+    messages/TraCIDemo11pMessage.msg
 
 # SM files
 SMFILES =

@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2016 David Eckhoff <david.eckhoff@fau.de>
+// Copyright (C) 2011 David Eckhoff <eckhoff@cs.fau.de>
 //
 // Documentation for these modules is at http://veins.car2x.org/
 //
@@ -20,26 +20,14 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-#include "veins/modules/application/traci/TraCIDemoRSU11p.h"
+import veins.base.utils.Coord;
+import veins.modules.messages.BaseFrame1609_4;
+import veins.base.utils.SimpleAddress;
 
-#include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+namespace veins;
 
-using namespace veins;
-
-Define_Module(veins::TraCIDemoRSU11p);
-
-void TraCIDemoRSU11p::onWSA(DemoServiceAdvertisment* wsa)
-{
-    // if this RSU receives a WSA for service 42, it will tune to the chan
-    if (wsa->getPsid() == 42) {
-        mac->changeServiceChannel(static_cast<Channel>(wsa->getTargetChannel()));
-    }
-}
-
-void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
-{
-    TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
-
-    // this rsu repeats the received traffic update in 2 seconds plus some random delay
-    sendDelayedDown(wsm->dup(), 2 + uniform(0.01, 0.2));
+packet TraCIDemo11pMessage extends BaseFrame1609_4 {
+    string demoData;
+    LAddress::L2Type senderAddress = -1;
+    int serial = 0;
 }

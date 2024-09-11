@@ -23,8 +23,8 @@
 package biblioteca_veins;
 import org.car2x.veins.modules.application.ieee80211p.DemoBaseApplLayer;
 
-simple TraCIDemoRSU11p extends DemoBaseApplLayer
+simple RSUApp extends DemoBaseApplLayer
 {
-    @class(veins::TraCIDemoRSU11p);
+    @class(veins::RSUApp);
     @display("i=block/app2");
 }

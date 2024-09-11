@@ -1,5 +1,4 @@
-../out/gcc-release/src/TraCIDemo11p.o: TraCIDemo11p.cc \
- ../../veins/src/veins/modules/application/traci/TraCIDemo11p.h \
+../out/gcc-release/src/RSUApp.o: RSUApp.cc RSUApp.h \
  ../../veins/src/veins/modules/application/ieee80211p/DemoBaseApplLayer.h \
  ../../veins/src/veins/base/modules/BaseApplLayer.h \
  ../../veins/src/veins/veins.h \
@@ -53,7 +52,7 @@
  ../../veins/src/veins/modules/mobility/traci/TraCICommandInterface.h \
  ../../veins/src/veins/modules/world/traci/trafficLight/TraCITrafficLightProgram.h \
  ../../veins/src/veins/modules/application/traci/TraCIDemo11pMessage_m.h
-../../veins/src/veins/modules/application/traci/TraCIDemo11p.h:
+RSUApp.h:
 ../../veins/src/veins/modules/application/ieee80211p/DemoBaseApplLayer.h:
 ../../veins/src/veins/base/modules/BaseApplLayer.h:
 ../../veins/src/veins/veins.h:

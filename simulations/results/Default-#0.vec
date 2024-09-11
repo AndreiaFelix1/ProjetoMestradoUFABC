@@ -1,8 +1,8 @@
 version 3
-run Default-0-20240904-19:51:49-26912
+run Default-0-20240904-20:23:31-30600
 attr configname Default
-attr datetime 20240904-19:51:49
-attr datetimef 20240904-195149
+attr datetime 20240904-20:23:31
+attr datetimef 20240904-202331
 attr experiment Default
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network VANET
-attr processid 26912
+attr processid 30600
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -41,7 +41,7 @@ config *.manager.launchConfig "xmldoc(\"erlangen.launchd.xml\")"
 config *.rsu[0].mobility.x 2000
 config *.rsu[0].mobility.y 2000
 config *.rsu[0].mobility.z 3
-config *.rsu[*].applType "\"biblioteca_veins.TraCIDemoRSU11p\""
+config *.rsu[*].applType "\"biblioteca_veins.RSUApp\""
 config *.rsu[*].appl.headerLength "80 bit"
 config *.rsu[*].appl.sendBeacons false
 config *.rsu[*].appl.dataOnSch false
@@ -64,7 +64,7 @@ config *.**.nic.phy80211p.usePropagationDelay true
 config *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
 config *.node[*].nic.phy80211p.antennaOffsetY "0 m"
 config *.node[*].nic.phy80211p.antennaOffsetZ "1.895 m"
-config *.node[*].applType "\"biblioteca_veins.TraCIDemo11p\""
+config *.node[*].applType "\"biblioteca_veins.CarApp\""
 config *.node[*].appl.headerLength "80 bit"
 config *.node[*].appl.sendBeacons false
 config *.node[*].appl.dataOnSch false
