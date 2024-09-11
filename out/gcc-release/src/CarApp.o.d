@@ -51,7 +51,7 @@
  ../../veins/src/veins/modules/mobility/traci/TraCIRegionOfInterest.h \
  ../../veins/src/veins/modules/mobility/traci/TraCICommandInterface.h \
  ../../veins/src/veins/modules/world/traci/trafficLight/TraCITrafficLightProgram.h \
- messages/TraCIDemo11pMessage_m.h
+ messages/TraCIDemo11pMessage_m.h messages/BeaconMessage_m.h
 CarApp.h:
 ../../veins/src/veins/modules/application/ieee80211p/DemoBaseApplLayer.h:
 ../../veins/src/veins/base/modules/BaseApplLayer.h:
@@ -106,3 +106,4 @@ CarApp.h:
 ../../veins/src/veins/modules/mobility/traci/TraCICommandInterface.h:
 ../../veins/src/veins/modules/world/traci/trafficLight/TraCITrafficLightProgram.h:
 messages/TraCIDemo11pMessage_m.h:
+messages/BeaconMessage_m.h:

@@ -22,15 +22,14 @@
 
 import veins.base.utils.Coord;
 import veins.modules.messages.BaseFrame1609_4;
+import veins.modules.messages.DemoSafetyMessage;
 import veins.base.utils.SimpleAddress;
 
 namespace veins;
 
-packet DemoSafetyMessage extends BaseFrame1609_4 {
+packet BeaconMessage extends DemoSafetyMessage {
     Coord senderPos;
     Coord senderSpeed;
-
-    // Adicionando a variável senderId
-    int senderId;  // Variável para armazenar o ID do remetente
+    int senderId;
 }
 

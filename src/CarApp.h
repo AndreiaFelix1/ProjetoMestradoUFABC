@@ -23,7 +23,6 @@
 #pragma once
 
 #include "veins/modules/application/ieee80211p/DemoBaseApplLayer.h"
-#include "DemoSafetyMessage_m"
 
 namespace veins {
 

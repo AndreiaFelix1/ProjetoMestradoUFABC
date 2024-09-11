@@ -1,5 +1,5 @@
 //
-// Generated file, do not edit! Created by opp_msgtool 6.0 from messages/DemoSafetyMessage.msg.
+// Generated file, do not edit! Created by opp_msgtool 6.0 from messages/BeaconMessage.msg.
 //
 
 // Disable warnings about unused variables, empty switch stmts, etc:
@@ -28,7 +28,7 @@
 #include <sstream>
 #include <memory>
 #include <type_traits>
-#include "DemoSafetyMessage_m.h"
+#include "BeaconMessage_m.h"
 
 namespace omnetpp {
 
@@ -152,83 +152,83 @@ void doParsimUnpacking(omnetpp::cCommBuffer *, T& t)
 
 namespace veins {
 
-Register_Class(DemoSafetyMessage)
+Register_Class(BeaconMessage)
 
-DemoSafetyMessage::DemoSafetyMessage(const char *name, short kind) : ::veins::BaseFrame1609_4(name, kind)
+BeaconMessage::BeaconMessage(const char *name, short kind) : ::veins::DemoSafetyMessage(name, kind)
 {
 }
 
-DemoSafetyMessage::DemoSafetyMessage(const DemoSafetyMessage& other) : ::veins::BaseFrame1609_4(other)
+BeaconMessage::BeaconMessage(const BeaconMessage& other) : ::veins::DemoSafetyMessage(other)
 {
     copy(other);
 }
 
-DemoSafetyMessage::~DemoSafetyMessage()
+BeaconMessage::~BeaconMessage()
 {
 }
 
-DemoSafetyMessage& DemoSafetyMessage::operator=(const DemoSafetyMessage& other)
+BeaconMessage& BeaconMessage::operator=(const BeaconMessage& other)
 {
     if (this == &other) return *this;
-    ::veins::BaseFrame1609_4::operator=(other);
+    ::veins::DemoSafetyMessage::operator=(other);
     copy(other);
     return *this;
 }
 
-void DemoSafetyMessage::copy(const DemoSafetyMessage& other)
+void BeaconMessage::copy(const BeaconMessage& other)
 {
     this->senderPos = other.senderPos;
     this->senderSpeed = other.senderSpeed;
     this->senderId = other.senderId;
 }
 
-void DemoSafetyMessage::parsimPack(omnetpp::cCommBuffer *b) const
+void BeaconMessage::parsimPack(omnetpp::cCommBuffer *b) const
 {
-    ::veins::BaseFrame1609_4::parsimPack(b);
+    ::veins::DemoSafetyMessage::parsimPack(b);
     doParsimPacking(b,this->senderPos);
     doParsimPacking(b,this->senderSpeed);
     doParsimPacking(b,this->senderId);
 }
 
-void DemoSafetyMessage::parsimUnpack(omnetpp::cCommBuffer *b)
+void BeaconMessage::parsimUnpack(omnetpp::cCommBuffer *b)
 {
-    ::veins::BaseFrame1609_4::parsimUnpack(b);
+    ::veins::DemoSafetyMessage::parsimUnpack(b);
     doParsimUnpacking(b,this->senderPos);
     doParsimUnpacking(b,this->senderSpeed);
     doParsimUnpacking(b,this->senderId);
 }
 
-const Coord& DemoSafetyMessage::getSenderPos() const
+const Coord& BeaconMessage::getSenderPos() const
 {
     return this->senderPos;
 }
 
-void DemoSafetyMessage::setSenderPos(const Coord& senderPos)
+void BeaconMessage::setSenderPos(const Coord& senderPos)
 {
     this->senderPos = senderPos;
 }
 
-const Coord& DemoSafetyMessage::getSenderSpeed() const
+const Coord& BeaconMessage::getSenderSpeed() const
 {
     return this->senderSpeed;
 }
 
-void DemoSafetyMessage::setSenderSpeed(const Coord& senderSpeed)
+void BeaconMessage::setSenderSpeed(const Coord& senderSpeed)
 {
     this->senderSpeed = senderSpeed;
 }
 
-int DemoSafetyMessage::getSenderId() const
+int BeaconMessage::getSenderId() const
 {
     return this->senderId;
 }
 
-void DemoSafetyMessage::setSenderId(int senderId)
+void BeaconMessage::setSenderId(int senderId)
 {
     this->senderId = senderId;
 }
 
-class DemoSafetyMessageDescriptor : public omnetpp::cClassDescriptor
+class BeaconMessageDescriptor : public omnetpp::cClassDescriptor
 {
   private:
     mutable const char **propertyNames;
@@ -238,8 +238,8 @@ class DemoSafetyMessageDescriptor : public omnetpp::cClassDescriptor
         FIELD_senderId,
     };
   public:
-    DemoSafetyMessageDescriptor();
-    virtual ~DemoSafetyMessageDescriptor();
+    BeaconMessageDescriptor();
+    virtual ~BeaconMessageDescriptor();
 
     virtual bool doesSupport(omnetpp::cObject *obj) const override;
     virtual const char **getPropertyNames() const override;
@@ -265,24 +265,24 @@ class DemoSafetyMessageDescriptor : public omnetpp::cClassDescriptor
     virtual void setFieldStructValuePointer(omnetpp::any_ptr object, int field, int i, omnetpp::any_ptr ptr) const override;
 };
 
-Register_ClassDescriptor(DemoSafetyMessageDescriptor)
+Register_ClassDescriptor(BeaconMessageDescriptor)
 
-DemoSafetyMessageDescriptor::DemoSafetyMessageDescriptor() : omnetpp::cClassDescriptor(omnetpp::opp_typename(typeid(veins::DemoSafetyMessage)), "veins::BaseFrame1609_4")
+BeaconMessageDescriptor::BeaconMessageDescriptor() : omnetpp::cClassDescriptor(omnetpp::opp_typename(typeid(veins::BeaconMessage)), "veins::DemoSafetyMessage")
 {
     propertyNames = nullptr;
 }
 
-DemoSafetyMessageDescriptor::~DemoSafetyMessageDescriptor()
+BeaconMessageDescriptor::~BeaconMessageDescriptor()
 {
     delete[] propertyNames;
 }
 
-bool DemoSafetyMessageDescriptor::doesSupport(omnetpp::cObject *obj) const
+bool BeaconMessageDescriptor::doesSupport(omnetpp::cObject *obj) const
 {
-    return dynamic_cast<DemoSafetyMessage *>(obj)!=nullptr;
+    return dynamic_cast<BeaconMessage *>(obj)!=nullptr;
 }
 
-const char **DemoSafetyMessageDescriptor::getPropertyNames() const
+const char **BeaconMessageDescriptor::getPropertyNames() const
 {
     if (!propertyNames) {
         static const char *names[] = {  nullptr };
@@ -293,19 +293,19 @@ const char **DemoSafetyMessageDescriptor::getPropertyNames() const
     return propertyNames;
 }
 
-const char *DemoSafetyMessageDescriptor::getProperty(const char *propertyName) const
+const char *BeaconMessageDescriptor::getProperty(const char *propertyName) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     return base ? base->getProperty(propertyName) : nullptr;
 }
 
-int DemoSafetyMessageDescriptor::getFieldCount() const
+int BeaconMessageDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     return base ? 3+base->getFieldCount() : 3;
 }
 
-unsigned int DemoSafetyMessageDescriptor::getFieldTypeFlags(int field) const
+unsigned int BeaconMessageDescriptor::getFieldTypeFlags(int field) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -321,7 +321,7 @@ unsigned int DemoSafetyMessageDescriptor::getFieldTypeFlags(int field) const
     return (field >= 0 && field < 3) ? fieldTypeFlags[field] : 0;
 }
 
-const char *DemoSafetyMessageDescriptor::getFieldName(int field) const
+const char *BeaconMessageDescriptor::getFieldName(int field) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -337,7 +337,7 @@ const char *DemoSafetyMessageDescriptor::getFieldName(int field) const
     return (field >= 0 && field < 3) ? fieldNames[field] : nullptr;
 }
 
-int DemoSafetyMessageDescriptor::findField(const char *fieldName) const
+int BeaconMessageDescriptor::findField(const char *fieldName) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     int baseIndex = base ? base->getFieldCount() : 0;
@@ -347,7 +347,7 @@ int DemoSafetyMessageDescriptor::findField(const char *fieldName) const
     return base ? base->findField(fieldName) : -1;
 }
 
-const char *DemoSafetyMessageDescriptor::getFieldTypeString(int field) const
+const char *BeaconMessageDescriptor::getFieldTypeString(int field) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -363,7 +363,7 @@ const char *DemoSafetyMessageDescriptor::getFieldTypeString(int field) const
     return (field >= 0 && field < 3) ? fieldTypeStrings[field] : nullptr;
 }
 
-const char **DemoSafetyMessageDescriptor::getFieldPropertyNames(int field) const
+const char **BeaconMessageDescriptor::getFieldPropertyNames(int field) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -376,7 +376,7 @@ const char **DemoSafetyMessageDescriptor::getFieldPropertyNames(int field) const
     }
 }
 
-const char *DemoSafetyMessageDescriptor::getFieldProperty(int field, const char *propertyName) const
+const char *BeaconMessageDescriptor::getFieldProperty(int field, const char *propertyName) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -389,7 +389,7 @@ const char *DemoSafetyMessageDescriptor::getFieldProperty(int field, const char 
     }
 }
 
-int DemoSafetyMessageDescriptor::getFieldArraySize(omnetpp::any_ptr object, int field) const
+int BeaconMessageDescriptor::getFieldArraySize(omnetpp::any_ptr object, int field) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -397,13 +397,13 @@ int DemoSafetyMessageDescriptor::getFieldArraySize(omnetpp::any_ptr object, int 
             return base->getFieldArraySize(object, field);
         field -= base->getFieldCount();
     }
-    DemoSafetyMessage *pp = omnetpp::fromAnyPtr<DemoSafetyMessage>(object); (void)pp;
+    BeaconMessage *pp = omnetpp::fromAnyPtr<BeaconMessage>(object); (void)pp;
     switch (field) {
         default: return 0;
     }
 }
 
-void DemoSafetyMessageDescriptor::setFieldArraySize(omnetpp::any_ptr object, int field, int size) const
+void BeaconMessageDescriptor::setFieldArraySize(omnetpp::any_ptr object, int field, int size) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -413,13 +413,13 @@ void DemoSafetyMessageDescriptor::setFieldArraySize(omnetpp::any_ptr object, int
         }
         field -= base->getFieldCount();
     }
-    DemoSafetyMessage *pp = omnetpp::fromAnyPtr<DemoSafetyMessage>(object); (void)pp;
+    BeaconMessage *pp = omnetpp::fromAnyPtr<BeaconMessage>(object); (void)pp;
     switch (field) {
-        default: throw omnetpp::cRuntimeError("Cannot set array size of field %d of class 'DemoSafetyMessage'", field);
+        default: throw omnetpp::cRuntimeError("Cannot set array size of field %d of class 'BeaconMessage'", field);
     }
 }
 
-const char *DemoSafetyMessageDescriptor::getFieldDynamicTypeString(omnetpp::any_ptr object, int field, int i) const
+const char *BeaconMessageDescriptor::getFieldDynamicTypeString(omnetpp::any_ptr object, int field, int i) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -427,13 +427,13 @@ const char *DemoSafetyMessageDescriptor::getFieldDynamicTypeString(omnetpp::any_
             return base->getFieldDynamicTypeString(object,field,i);
         field -= base->getFieldCount();
     }
-    DemoSafetyMessage *pp = omnetpp::fromAnyPtr<DemoSafetyMessage>(object); (void)pp;
+    BeaconMessage *pp = omnetpp::fromAnyPtr<BeaconMessage>(object); (void)pp;
     switch (field) {
         default: return nullptr;
     }
 }
 
-std::string DemoSafetyMessageDescriptor::getFieldValueAsString(omnetpp::any_ptr object, int field, int i) const
+std::string BeaconMessageDescriptor::getFieldValueAsString(omnetpp::any_ptr object, int field, int i) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -441,7 +441,7 @@ std::string DemoSafetyMessageDescriptor::getFieldValueAsString(omnetpp::any_ptr 
             return base->getFieldValueAsString(object,field,i);
         field -= base->getFieldCount();
     }
-    DemoSafetyMessage *pp = omnetpp::fromAnyPtr<DemoSafetyMessage>(object); (void)pp;
+    BeaconMessage *pp = omnetpp::fromAnyPtr<BeaconMessage>(object); (void)pp;
     switch (field) {
         case FIELD_senderPos: return "";
         case FIELD_senderSpeed: return "";
@@ -450,7 +450,7 @@ std::string DemoSafetyMessageDescriptor::getFieldValueAsString(omnetpp::any_ptr 
     }
 }
 
-void DemoSafetyMessageDescriptor::setFieldValueAsString(omnetpp::any_ptr object, int field, int i, const char *value) const
+void BeaconMessageDescriptor::setFieldValueAsString(omnetpp::any_ptr object, int field, int i, const char *value) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -460,14 +460,14 @@ void DemoSafetyMessageDescriptor::setFieldValueAsString(omnetpp::any_ptr object,
         }
         field -= base->getFieldCount();
     }
-    DemoSafetyMessage *pp = omnetpp::fromAnyPtr<DemoSafetyMessage>(object); (void)pp;
+    BeaconMessage *pp = omnetpp::fromAnyPtr<BeaconMessage>(object); (void)pp;
     switch (field) {
         case FIELD_senderId: pp->setSenderId(string2long(value)); break;
-        default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'DemoSafetyMessage'", field);
+        default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'BeaconMessage'", field);
     }
 }
 
-omnetpp::cValue DemoSafetyMessageDescriptor::getFieldValue(omnetpp::any_ptr object, int field, int i) const
+omnetpp::cValue BeaconMessageDescriptor::getFieldValue(omnetpp::any_ptr object, int field, int i) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -475,16 +475,16 @@ omnetpp::cValue DemoSafetyMessageDescriptor::getFieldValue(omnetpp::any_ptr obje
             return base->getFieldValue(object,field,i);
         field -= base->getFieldCount();
     }
-    DemoSafetyMessage *pp = omnetpp::fromAnyPtr<DemoSafetyMessage>(object); (void)pp;
+    BeaconMessage *pp = omnetpp::fromAnyPtr<BeaconMessage>(object); (void)pp;
     switch (field) {
         case FIELD_senderPos: return omnetpp::toAnyPtr(&pp->getSenderPos()); break;
         case FIELD_senderSpeed: return omnetpp::toAnyPtr(&pp->getSenderSpeed()); break;
         case FIELD_senderId: return pp->getSenderId();
-        default: throw omnetpp::cRuntimeError("Cannot return field %d of class 'DemoSafetyMessage' as cValue -- field index out of range?", field);
+        default: throw omnetpp::cRuntimeError("Cannot return field %d of class 'BeaconMessage' as cValue -- field index out of range?", field);
     }
 }
 
-void DemoSafetyMessageDescriptor::setFieldValue(omnetpp::any_ptr object, int field, int i, const omnetpp::cValue& value) const
+void BeaconMessageDescriptor::setFieldValue(omnetpp::any_ptr object, int field, int i, const omnetpp::cValue& value) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -494,14 +494,14 @@ void DemoSafetyMessageDescriptor::setFieldValue(omnetpp::any_ptr object, int fie
         }
         field -= base->getFieldCount();
     }
-    DemoSafetyMessage *pp = omnetpp::fromAnyPtr<DemoSafetyMessage>(object); (void)pp;
+    BeaconMessage *pp = omnetpp::fromAnyPtr<BeaconMessage>(object); (void)pp;
     switch (field) {
         case FIELD_senderId: pp->setSenderId(omnetpp::checked_int_cast<int>(value.intValue())); break;
-        default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'DemoSafetyMessage'", field);
+        default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'BeaconMessage'", field);
     }
 }
 
-const char *DemoSafetyMessageDescriptor::getFieldStructName(int field) const
+const char *BeaconMessageDescriptor::getFieldStructName(int field) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -514,7 +514,7 @@ const char *DemoSafetyMessageDescriptor::getFieldStructName(int field) const
     };
 }
 
-omnetpp::any_ptr DemoSafetyMessageDescriptor::getFieldStructValuePointer(omnetpp::any_ptr object, int field, int i) const
+omnetpp::any_ptr BeaconMessageDescriptor::getFieldStructValuePointer(omnetpp::any_ptr object, int field, int i) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -522,7 +522,7 @@ omnetpp::any_ptr DemoSafetyMessageDescriptor::getFieldStructValuePointer(omnetpp
             return base->getFieldStructValuePointer(object, field, i);
         field -= base->getFieldCount();
     }
-    DemoSafetyMessage *pp = omnetpp::fromAnyPtr<DemoSafetyMessage>(object); (void)pp;
+    BeaconMessage *pp = omnetpp::fromAnyPtr<BeaconMessage>(object); (void)pp;
     switch (field) {
         case FIELD_senderPos: return omnetpp::toAnyPtr(&pp->getSenderPos()); break;
         case FIELD_senderSpeed: return omnetpp::toAnyPtr(&pp->getSenderSpeed()); break;
@@ -530,7 +530,7 @@ omnetpp::any_ptr DemoSafetyMessageDescriptor::getFieldStructValuePointer(omnetpp
     }
 }
 
-void DemoSafetyMessageDescriptor::setFieldStructValuePointer(omnetpp::any_ptr object, int field, int i, omnetpp::any_ptr ptr) const
+void BeaconMessageDescriptor::setFieldStructValuePointer(omnetpp::any_ptr object, int field, int i, omnetpp::any_ptr ptr) const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     if (base) {
@@ -540,9 +540,9 @@ void DemoSafetyMessageDescriptor::setFieldStructValuePointer(omnetpp::any_ptr ob
         }
         field -= base->getFieldCount();
     }
-    DemoSafetyMessage *pp = omnetpp::fromAnyPtr<DemoSafetyMessage>(object); (void)pp;
+    BeaconMessage *pp = omnetpp::fromAnyPtr<BeaconMessage>(object); (void)pp;
     switch (field) {
-        default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'DemoSafetyMessage'", field);
+        default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'BeaconMessage'", field);
     }
 }
 

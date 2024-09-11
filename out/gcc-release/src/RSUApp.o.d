@@ -51,7 +51,7 @@
  ../../veins/src/veins/modules/mobility/traci/TraCIRegionOfInterest.h \
  ../../veins/src/veins/modules/mobility/traci/TraCICommandInterface.h \
  ../../veins/src/veins/modules/world/traci/trafficLight/TraCITrafficLightProgram.h \
- ../../veins/src/veins/modules/application/traci/TraCIDemo11pMessage_m.h
+ messages/TraCIDemo11pMessage_m.h
 RSUApp.h:
 ../../veins/src/veins/modules/application/ieee80211p/DemoBaseApplLayer.h:
 ../../veins/src/veins/base/modules/BaseApplLayer.h:
@@ -105,4 +105,4 @@ RSUApp.h:
 ../../veins/src/veins/modules/mobility/traci/TraCIRegionOfInterest.h:
 ../../veins/src/veins/modules/mobility/traci/TraCICommandInterface.h:
 ../../veins/src/veins/modules/world/traci/trafficLight/TraCITrafficLightProgram.h:
-../../veins/src/veins/modules/application/traci/TraCIDemo11pMessage_m.h:
+messages/TraCIDemo11pMessage_m.h:

@@ -23,7 +23,7 @@
 #include "CarApp.h"
 
 #include "messages/TraCIDemo11pMessage_m.h"
-#include "DemoSafetyMessage_m"
+#include "messages/BeaconMessage_m.h"
 
 using namespace veins;
 
@@ -59,7 +59,7 @@ void CarApp::onWSA(DemoServiceAdvertisment* wsa)
 
 void CarApp::onBSM(DemoSafetyMessage* bsm)
 {
-    std::cout << self << " recebi mensagem de beacon " << simTime() << endl;
+    std::cout << self << " recebi mensagem de beacon do veículo [" << bsm->getSenderId() << "  aos " << simTime() << endl;
     // Your application has received a beacon message from another car or RSU
     // code for handling the message goes here
 }
@@ -70,7 +70,6 @@ void CarApp::sendBeacon()
     populateWSM(beacon);
     beacon->setSenderId(self);
     sendDown(beacon);
-    std::cout << self << " enviei mensagem de beacon " << simTime() << endl;
 }
 
 void CarApp::onWSM(BaseFrame1609_4* frame)
@@ -113,19 +112,17 @@ void CarApp::handleSelfMsg(cMessage* msg)
     }
     else {
         switch (msg->getKind()) {
-        case SEND_BEACON_EVT: {
-            std::cout << "[BEACON] " << self << " enviando beacon em " << simTime() << endl;
-            sendBeacon();
-            scheduleAt(simTime() + beaconInterval, sendBeaconEvt);
-            break;
+            case SEND_BEACON_EVT: {
+                std::cout << "[BEACON] " << self << " enviando beacon em " << simTime() << endl;
+                sendBeacon();
+                scheduleAt(simTime() + beaconInterval, sendBeaconEvt);
+                break;
+            }
+            default: {
+                if (msg) EV_WARN << " APP: Error: Got Self Message of unknown kind! Name: " << msg->getKind() << endl;
+                break;
+            }
         }
-        default: {
-            if (msg) EV_WARM << " APP: Error: Got Self Message of unknown kind! Name: " << msg->get>
-            break;
-
-
-        }
-
     }
 }
 
